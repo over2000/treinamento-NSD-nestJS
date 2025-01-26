@@ -1,0 +1,15 @@
+{
+  "name": "cap-4-lab-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "stream.js",
+  "scripts": {
+    "start": "node stream.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
