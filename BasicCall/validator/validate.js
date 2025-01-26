@@ -19,7 +19,7 @@ const get = promisify((url, cb) => {
       cb(err);
     });
 });
-const HOST = 'http://localhost:3000';
+const HOST = 'http://localhost:7000';
 const injectPath = join(tmpdir(), 'inject.js');
 const data = randomBytes(10).toString('base64');
 const inject = `require('crypto').randomBytes = () => '${data}'`;
@@ -30,7 +30,7 @@ const server = spawn(
   process.platform === 'win32' ? 'npm.cmd' : 'npm',
   ['start'],
   {
-    env: { ...process.env, NODE_OPTIONS: `-r ${injectPath}` },
+    env: { ...process.env, PORT: 7000, NODE_OPTIONS: `-r ${injectPath}` },
   },
 );
 
